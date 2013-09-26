@@ -299,8 +299,11 @@ public interface MetricsConstants {
     // Battery settings
     public static final int BATTERY_SETTINGS = 252;
 
-    // Status bar settings
+    // Lock screen settings
     public static final int LOCK_SCREEN_SETTINGS = 253;
+
+    // network traffic settings
+    public static final int NETWORK_TRAFFIC_SETTINGS= 254;
 
     // These constants must match those in the analytic pipeline, do not edit.
     // Add temporary values to the top of MetricsLogger instead.
