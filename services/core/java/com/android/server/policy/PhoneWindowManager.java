@@ -759,6 +759,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES), false, this,
 		    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.LONG_PRESS_KILL_DELAY), false, this,
+                    UserHandle.USER_ALL);
             updateSettings();
         }
 
@@ -1507,9 +1510,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         mShortPressOnSleepBehavior = mContext.getResources().getInteger(
                 com.android.internal.R.integer.config_shortPressOnSleepBehavior);
 
-        mBackKillTimeout = mContext.getResources().getInteger(
-                com.android.internal.R.integer.config_backKillTimeout);
-
         mUseTvRouting = AudioSystem.getPlatformType(mContext) == AudioSystem.PLATFORM_TELEVISION;
 
         readConfigurationDependentBehaviors();
@@ -1776,6 +1776,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             // volume rocker wake
             mVolumeRockerWake = Settings.System.getIntForUser(resolver,
                     Settings.System.VOLUME_ROCKER_WAKE, 0, UserHandle.USER_CURRENT) == 1;
+
+            // Hold back to kill.
+            mBackKillTimeout = Settings.Secure.getIntForUser(resolver,
+                    Settings.Secure.LONG_PRESS_KILL_DELAY, 1000, UserHandle.USER_CURRENT);
 
             // Configure wake gesture.
             boolean wakeGestureEnabledSetting = Settings.Secure.getIntForUser(resolver,
