@@ -27,5 +27,7 @@
   <java-symbol name="global_action_reboot" type="string" />
   <java-symbol type="array" name="shutdown_reboot_options" />
   <java-symbol type="array" name="shutdown_reboot_actions" />
+  <java-symbol name="ic_lock_power_screenshot" type="drawable" />
+  <java-symbol name="global_action_screenshot" type="string" />
   <java-symbol type="bool" name="config_advanced_reboot" />
 </resources>
