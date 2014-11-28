@@ -48,4 +48,7 @@
 
   <!-- Config.xml entries -->
   <java-symbol type="integer" name="config_backKillTimeout" />
+
+  <!-- ime switcher -->
+  <java-symbol type="bool" name="config_show_cmIMESwitcher"/>
 </resources>
