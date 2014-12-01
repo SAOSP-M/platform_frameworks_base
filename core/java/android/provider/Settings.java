@@ -3607,7 +3607,9 @@ public final class Settings {
          * Sets the date string style
          * 0 - Regular style
          * 1 - Lowercase
-         * 2 - Uppercase
+         * 2 - Uppercase     
+
+        /**
          * @hide
          */
         public static final String STATUSBAR_CLOCK_DATE_STYLE = "statusbar_clock_date_style";
@@ -3660,6 +3662,12 @@ public final class Settings {
          * @hide
          */
         public static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
+
+        /**
+         * Show search bar in recents
+         * @hide
+         */
+        public static final String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
