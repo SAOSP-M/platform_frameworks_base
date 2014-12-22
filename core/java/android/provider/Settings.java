@@ -3440,6 +3440,45 @@ public final class Settings {
                 new InclusiveIntegerRangeValidator(0, 3);
 
         /**
+         * Navigation bar height when it is on protrait
+         * @hide
+         */
+        public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+
+        /** @hide */
+        private static final Validator NAVIGATION_BAR_HEIGHT_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 48);
+
+        /**
+         * Navigation bar height when it is on landscape
+         * @hide
+         */
+        public static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
+
+        /** @hide */
+        private static final Validator NAVIGATION_BAR_HEIGHT_LANDSCAPE_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 48);
+
+        /**
+         * Navigation bar height when it is on landscape at the right
+         * @hide
+         */
+        public static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+
+        /** @hide */
+        private static final Validator NAVIGATION_BAR_WIDTH_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 42);
+
+        /**
+         * Wether navigation bar is enabled or not
+         * @hide
+         */
+        public static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
+
+        /** @hide */
+        public static final Validator NAVIGATION_BAR_SHOW_VALIDATOR = sBooleanValidator;
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
@@ -3631,6 +3670,10 @@ public final class Settings {
             PRIVATE_SETTINGS.add(QS_QUICK_PULLDOWN);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
             PRIVATE_SETTINGS.add(STATUS_BAR_SHOW_CARRIER);
+            PRIVATE_SETTINGS.add(NAVIGATION_BAR_HEIGHT);
+            PRIVATE_SETTINGS.add(NAVIGATION_BAR_HEIGHT_LANDSCAPE);
+            PRIVATE_SETTINGS.add(NAVIGATION_BAR_WIDTH);
+            PRIVATE_SETTINGS.add(NAVIGATION_BAR_SHOW);
         }
 
         /**
