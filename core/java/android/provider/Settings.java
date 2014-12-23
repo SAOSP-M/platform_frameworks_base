@@ -3785,6 +3785,12 @@ public final class Settings {
         public static final String STATUSBAR_BATTERY_BAR_ANIMATE = "statusbar_battery_bar_animate";
 
         /**
+         * Whether navigation bar is placed on the left side in landscape mode
+         * @hide
+         */
+        public static final String NAVBAR_LEFT_IN_LANDSCAPE = "navigation_bar_left";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
