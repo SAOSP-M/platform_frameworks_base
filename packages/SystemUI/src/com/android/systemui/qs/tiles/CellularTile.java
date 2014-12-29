@@ -41,6 +41,7 @@ import com.android.systemui.statusbar.policy.SignalCallbackAdapter;
 public class CellularTile extends QSTile<QSTile.SignalState> {
     private static final Intent CELLULAR_SETTINGS = new Intent().setComponent(new ComponentName(
             "com.android.settings", "com.android.settings.Settings$DataUsageSummaryActivity"));
+
     private static final Intent MOBILE_NETWORK_SETTINGS = new Intent(Settings.ACTION_DATA_ROAMING_SETTINGS);
 
     private final NetworkController mController;

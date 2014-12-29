@@ -16,7 +16,9 @@
 
 package com.android.systemui.qs.tiles;
 
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.provider.Settings;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.systemui.R;
@@ -26,6 +28,8 @@ import com.android.systemui.statusbar.policy.RotationLockController.RotationLock
 
 /** Quick settings tile: Rotation **/
 public class RotationLockTile extends QSTile<QSTile.BooleanState> {
+    Intent intent = new Intent(Intent.ACTION_MAIN);
+
     private final AnimationIcon mPortraitToAuto
             = new AnimationIcon(R.drawable.ic_portrait_to_auto_rotate_animation);
     private final AnimationIcon mAutoToPortrait
@@ -64,6 +68,20 @@ public class RotationLockTile extends QSTile<QSTile.BooleanState> {
         final boolean newState = !mState.value;
         mController.setRotationLocked(newState);
         refreshState(newState ? UserBoolean.USER_TRUE : UserBoolean.USER_FALSE);
+    }
+
+    @Override
+    protected void handleSecondaryClick() {
+    intent.setClassName("com.android.settings",
+            "com.android.settings.Settings$DisplayRotationSettingsActivity");
+        mHost.startActivityDismissingKeyguard(intent);
+    }
+
+    @Override
+    protected void handleLongClick() {
+    intent.setClassName("com.android.settings",
+            "com.android.settings.Settings$DisplayRotationSettingsActivity");
+        mHost.startActivityDismissingKeyguard(intent);
     }
 
     @Override
