@@ -3476,8 +3476,7 @@ public final class Settings {
         public static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
 
         /** @hide */
-        public static final Validator NAVIGATION_BAR_SHOW_VALIDATOR = sBooleanValidator;
-
+        public static final Validator NAVIGATION_BAR_SHOW_VALIDATOR = sBooleanValidator;	
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
@@ -3538,6 +3537,12 @@ public final class Settings {
          * @hide
          */
         public static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+
+        /**
+	 * Whether to dismiss all recents tasks
+         * @hide
+         */
+        public static final String RECENTS_CLEAR_ALL_DISMISS_ALL = "recents_clear_all_dismiss_all";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
