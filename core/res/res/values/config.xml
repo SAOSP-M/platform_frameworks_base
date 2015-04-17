@@ -2293,5 +2293,5 @@
          Error codes not listed will not lead to modem restarts.
          Array of "code#,retry#"  -->
     <string-array name="config_cell_retries_per_error_code">
-    </string-array>
+    </string-array>    
 </resources>
