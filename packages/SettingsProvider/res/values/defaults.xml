@@ -223,5 +223,5 @@
     <integer name="def_qs_quick_pulldown">0</integer>
 
     <!-- Default for Settings.System.STATUS_BAR_BATTERY_STYLE -->
-    <integer name="def_battery_style">0</integer>
+    <integer name="def_battery_style">2</integer>
 </resources>
