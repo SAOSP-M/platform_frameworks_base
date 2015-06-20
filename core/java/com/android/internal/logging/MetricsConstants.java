@@ -284,9 +284,6 @@ public interface MetricsConstants {
     // Rotation settings
     public static final int ROTATION_SETTINGS = 248;
 
-    // Status bar settings
-    public static final int STATUS_BAR_SETTINGS = 249;
-
     // Additional settings
     public static final int ADDITIONAL_SETTINGS = 249;
 
@@ -304,6 +301,12 @@ public interface MetricsConstants {
 
     // network traffic settings
     public static final int NETWORK_TRAFFIC_SETTINGS= 254;
+
+    // Status bar settings
+    public static final int STATUS_BAR_SETTINGS = 255;
+
+    // Location tile
+    public static final int QS_LOCATION_DETAILS = 256;
 
     // These constants must match those in the analytic pipeline, do not edit.
     // Add temporary values to the top of MetricsLogger instead.
