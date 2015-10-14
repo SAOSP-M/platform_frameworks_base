@@ -65,9 +65,4 @@
             android:title="@string/status_bar_airplane" />
 
     </PreferenceScreen>
-
-    <Preference
-        android:summary="@string/tuner_persistent_warning"
-        android:selectable="false" />
-
 </PreferenceScreen>
