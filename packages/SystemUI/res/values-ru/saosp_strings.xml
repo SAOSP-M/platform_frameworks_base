@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2009, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Battery level for expanded quick settings [CHAR LIMIT=2] -->
+    <string name="battery_level_template"><xliff:g id="level" example="45">%d</xliff:g>%%</string>
+
+    <!-- Quick settings -->
+    <string name="quick_settings_brightness_label">Яркость</string>
+    <string name="quick_settings_heads_up_label">Всплыв. уведомления</string>
+    <string name="quick_settings_screen_off_label">Выключить экран</string>
+    <string name="quick_settings_screenshot_label">Скриншот</string>
+    <string name="quick_settings_volume_panel_label">Панель громкости</string>
+
+    <!-- Content description of the brightness tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_brightness">Яркость.</string>
+
+    <!-- Content description of the screen off tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_screen_off">Выключить экран.</string>
+
+    <!-- Content description of the screenshot tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_screenshot">Скриншот.</string>
+
+    <!-- Content description of the volume panel tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_volume_panel">Панель громкости.</string>
+
+    <!-- Content description of the heads up tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_heads_up_off">Всплывающие уведомления выкл.</string>
+    <!-- Content description of the heads up tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_heads_up_on">Всплывающие уведомления.</string>
+
+    <!-- Announcement made when heads up changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_heads_up_changed_off">Всплывающие уведомления отключены.</string>
+    <!-- Announcement made when heads up changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_heads_up_changed_on">Всплывающие уведомления включены.</string>
+
+    <!-- The text for the button in the notification window-shade that clears
+         all of the currently visible notifications. [CHAR LIMIT=10]-->
+    <string name="clear_recents">Очистить все недавние</string>
+
+    <!-- Screen timeout tile -->
+    <string name="quick_settings_timeout_label">Тайм-аут</string>
+    <string name="quick_settings_screen_timeout_detail_title">Тайм-аут экрана</string>
+
+    <!-- Content description of the USB tethering tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB-модем отключен.</string>
+    <!-- Content description of the USB tethering tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_usb_tether_on">USB-модем включен.</string>
+
+    <!-- Announcement made when USB tethering changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB-модем отключен.</string>
+    <!-- Announcement made when USB tethering changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB-модем включен.</string>
+
+    <!-- USB tethering tile -->
+    <string name="quick_settings_usb_tether_label">USB-модем</string>
+</resources>
