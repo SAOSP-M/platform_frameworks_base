@@ -20,4 +20,7 @@
     <!-- Floating action button -->
     <color name="fab_color">@*android:color/material_deep_teal_500</color>
     <color name="floating_action_button_icon_color">#ffffff</color>
+
+    <!-- QS Toast Text color -->
+    <color name="quick_settings_toast_color">#ffbe1b</color>
 </resources>

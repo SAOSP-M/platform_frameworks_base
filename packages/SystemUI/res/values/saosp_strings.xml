@@ -59,4 +59,9 @@
 
     <!-- Content description of the power button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
     <string name="accessibility_power">Power</string>
+
+    <string name="qs_tile_edit_header_instruction">Press and hold a tile to edit</string>
+    <string name="quick_settings_edit_label">Edit Tiles</string>
+    <string name="quick_settings_cannot_delete_edit_tile">Cannot delete the Edit tile</string>
+    <string name="qs_tiles_reset_confirmation">Reset quick settings tiles to default configuration?</string>
 </resources>
