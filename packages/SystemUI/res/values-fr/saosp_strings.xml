@@ -75,4 +75,28 @@
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
     <string name="status_bar_notification_info_overflow" translatable="false">\u221E</string>
+	
+    <!-- Strings for lockscreen shortcut hints -->
+    <string name="left_shortcut_hint">Glisser vers la droite pour %1$s</string>
+    <string name="right_shortcut_hint">Glisser vers la gauche pour %1$s</string>
+
+    <string name="lockscreen_message">Appuyer sur une icône à gauche ou à droite pour réattribuer un raccourci sur l\'écran de verrouillage.</string>
+    <string name="lockscreen_default_target">Par défaut</string>
+    <string name="select_application">Sélectionner l\'application</string>
+    <string name="lockscreen_choose_action_title">Choisir l\'action</string>
+    <string name="lockscreen_none_target">Aucune</string>
+
+     <!-- Dialog title for navigation bar button selection -->
+    <string name="navbar_dialog_title">Choisir une action pour assigner</string>
+    <string name="navbar_home_button">Bouton Accueil</string>
+    <string name="navbar_recent_button">Bouton récent</string>
+    <string name="navbar_search_button">Bouton rechercher</string>
+    <string name="navbar_back_button">Bouton retour</string>
+    <string name="navbar_empty_button">Bouton vide</string>
+    <string name="navbar_menu_conditional_button">Bouton (masquer automatiquement) menu</string>
+    <string name="navbar_menu_always_button">Bouton (toujours afficher) menu</string>
+    <string name="navbar_menu_big_button">Bouton menu</string>
+
+    <string name="accessibility_dpad_left">Curseur gauche</string>
+    <string name="accessibility_dpad_right">Curseur droit</string>
 </resources>
