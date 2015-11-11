@@ -2529,6 +2529,12 @@ public final class Settings {
          * SCREEN_BRIGHTNESS_MODE value for automatic mode.
          */
         public static final int SCREEN_BRIGHTNESS_MODE_AUTOMATIC = 1;
+     
+         /**
+         * Enable double tap gesture anywhere on the lock screen put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
 
         /**
          * Control whether the process CPU usage meter should be shown.
