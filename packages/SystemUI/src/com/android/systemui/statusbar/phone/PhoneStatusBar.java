@@ -79,6 +79,7 @@ import android.provider.Settings;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.NotificationListenerService.RankingMap;
 import android.service.notification.StatusBarNotification;
+import android.text.TextUtils;
 import android.util.ArraySet;
 import android.util.DisplayMetrics;
 import android.util.EventLog;
@@ -113,8 +114,10 @@ import com.android.internal.navigation.Navigator;
 import com.android.internal.navigation.StatusbarImpl;
 import com.android.internal.statusbar.NotificationVisibility;
 import com.android.internal.statusbar.StatusBarIcon;
+import com.android.internal.utils.du.ActionHandler;
 import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.utils.du.DUPackageMonitor;
+import com.android.internal.utils.du.DUSystemReceiver;
 import com.android.keyguard.KeyguardHostView.OnDismissAction;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardUpdateMonitorCallback;
@@ -474,6 +477,18 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     resolver, Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1;
         }
     }
+
+    private DUSystemReceiver mDUReceiver = new DUSystemReceiver() {
+        @Override
+        protected void onSecureReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (TextUtils.equals(ActionHandler.INTENT_TOGGLE_FLASHLIGHT, action)) {
+                if (mFlashlightController.isAvailable()) {
+                    mFlashlightController.setFlashlight(!mFlashlightController.isEnabled());
+                }
+            }
+        }
+    };
 
     private void forceAddNavigationBar() {
         // If we have no Navbar view and we should have one, create it
@@ -1083,6 +1098,11 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         demoFilter.addAction(ACTION_DEMO);
         context.registerReceiverAsUser(mDemoReceiver, UserHandle.ALL, demoFilter,
                 android.Manifest.permission.DUMP, null);
+
+        // flashlight action target for toggle
+        IntentFilter flashlightFilter = new IntentFilter();
+        flashlightFilter.addAction(ActionHandler.INTENT_TOGGLE_FLASHLIGHT);
+        context.registerReceiver(mDUReceiver, flashlightFilter);
 
         // listen for USER_SETUP_COMPLETE setting (per-user)
         resetUserSetupObserver();
@@ -3571,6 +3591,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         }
         mContext.unregisterReceiver(mBroadcastReceiver);
         mContext.unregisterReceiver(mDemoReceiver);
+        mContext.unregisterReceiver(mDUReceiver);
         mPackageMonitor.removeListener(mNavigationController);
         mPackageMonitor.unregister();
         mNavigationController.destroy();
