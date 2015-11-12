@@ -93,4 +93,10 @@
 
     <string name="accessibility_dpad_left">Курсор влево</string>
     <string name="accessibility_dpad_right">Курсор вправо</string>
+    
+    <!-- Navigation bar power button-->
+    <string name="navbar_power_button">Меню питания</string>
+
+    <!-- Content description of the power button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_power">Питание</string>
 </resources>
