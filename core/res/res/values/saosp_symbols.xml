@@ -57,4 +57,7 @@
 
   <!-- WiFi turn off notification -->
   <java-symbol type="string" name="notify_turn_wifi_off_title" />
+
+  <!-- Vendor system error -->
+  <java-symbol type="string" name="system_error_vendorprint" />
 </resources>
