@@ -8920,6 +8920,7 @@ package android.content.pm {
     field public int descriptionRes;
     field public boolean enabled;
     field public int flags;
+    field public boolean isThemeable;
     field public int largestWidthLimitDp;
     field public java.lang.String manageSpaceActivityName;
     field public java.lang.String nativeLibraryDir;
@@ -31870,6 +31871,7 @@ package android.test.mock {
     method public void setComponentEnabledSetting(android.content.ComponentName, int, int);
     method public boolean setDefaultBrowserPackageName(java.lang.String, int);
     method public void setInstallerPackageName(java.lang.String, java.lang.String);
+    method public void updateIconMaps(java.lang.String);
     method public void verifyPendingInstall(int, int);
   }
 

@@ -9177,6 +9177,7 @@ package android.content.pm {
     field public int descriptionRes;
     field public boolean enabled;
     field public int flags;
+    field public boolean isThemeable;
     field public int largestWidthLimitDp;
     field public java.lang.String manageSpaceActivityName;
     field public java.lang.String nativeLibraryDir;
@@ -9701,6 +9702,9 @@ package android.content.pm {
     field public static final int INSTALL_FAILED_REPLACE_COULDNT_DELETE = -10; // 0xfffffff6
     field public static final int INSTALL_FAILED_SHARED_USER_INCOMPATIBLE = -8; // 0xfffffff8
     field public static final int INSTALL_FAILED_TEST_ONLY = -15; // 0xfffffff1
+    field public static final int INSTALL_FAILED_THEME_AAPT_ERROR = -400; // 0xfffffe70
+    field public static final int INSTALL_FAILED_THEME_IDMAP_ERROR = -401; // 0xfffffe6f
+    field public static final int INSTALL_FAILED_THEME_UNKNOWN_ERROR = -402; // 0xfffffe6e
     field public static final int INSTALL_FAILED_UPDATE_INCOMPATIBLE = -7; // 0xfffffff9
     field public static final int INSTALL_FAILED_VERIFICATION_FAILURE = -22; // 0xffffffea
     field public static final int INSTALL_FAILED_VERIFICATION_TIMEOUT = -21; // 0xffffffeb
@@ -34160,6 +34164,7 @@ package android.test.mock {
     method public void setComponentEnabledSetting(android.content.ComponentName, int, int);
     method public boolean setDefaultBrowserPackageName(java.lang.String, int);
     method public void setInstallerPackageName(java.lang.String, java.lang.String);
+    method public void updateIconMaps(java.lang.String);
     method public void updatePermissionFlags(java.lang.String, java.lang.String, int, int, android.os.UserHandle);
     method public void verifyIntentFilter(int, int, java.util.List<java.lang.String>);
     method public void verifyPendingInstall(int, int);
