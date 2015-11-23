@@ -24,6 +24,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Process;
 import android.provider.Settings;
+import android.provider.CMSettings;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -69,7 +70,6 @@ public class QSTileHost implements QSTile.Host, Tunable {
     private static final String TAG = "QSTileHost";
     private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
 
-    public static final String TILES_SETTING = "sysui_qs_tiles";
     public static final int TILES_PER_PAGE = 8;
 
     private final Context mContext;
@@ -117,7 +117,7 @@ public class QSTileHost implements QSTile.Host, Tunable {
         ht.start();
         mLooper = ht.getLooper();
 
-        TunerService.get(mContext).addTunable(this, TILES_SETTING);
+        TunerService.get(mContext).addTunableByProvider(this, CMSettings.Secure.QS_TILES, true);
     }
 
     public void destroy() {
@@ -235,7 +235,7 @@ public class QSTileHost implements QSTile.Host, Tunable {
     
     @Override
     public void onTuningChanged(String key, String newValue) {
-        if (!TILES_SETTING.equals(key)) {
+        if (!CMSettings.Secure.QS_TILES.equals(key)) {
             return;
         }
         if (DEBUG) Log.d(TAG, "Recreating tiles");
@@ -326,15 +326,16 @@ public class QSTileHost implements QSTile.Host, Tunable {
     }
 
     public void setTiles(List<String> tiles) {
-        Settings.Secure.putStringForUser(getContext().getContentResolver(), TILES_SETTING,
+        CMSettings.Secure.putStringForUser(getContext().getContentResolver(),
+                CMSettings.Secure.QS_TILES,
                 TextUtils.join(",", tiles), ActivityManager.getCurrentUser());
     }
 
     @Override
     public void resetTiles() {
         setEditing(false);
-        Settings.Secure.putStringForUser(getContext().getContentResolver(),
-                Settings.Secure.QS_TILES, "default", ActivityManager.getCurrentUser());
+        CMSettings.Secure.putStringForUser(getContext().getContentResolver(),
+                CMSettings.Secure.QS_TILES, "default", ActivityManager.getCurrentUser());
     }
 
     public static int getLabelResource(String spec) {
