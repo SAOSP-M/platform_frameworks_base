@@ -157,6 +157,11 @@ public class CellularTile extends QSTile<QSTile.SignalState> {
         return MetricsLogger.QS_CELLULAR;
     }
 
+    @Override
+    public boolean hasDualTargetsDetails() {
+        return true;
+    }
+
     // Remove the period from the network name
     public static String removeTrailingPeriod(String string) {
         if (string == null) return null;
