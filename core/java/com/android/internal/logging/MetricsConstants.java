@@ -264,47 +264,39 @@ public interface MetricsConstants {
     public static final int TUNER_BATTERY_PERCENTAGE = 237;
     public static final int FUELGAUGE_INACTIVE_APPS = 238;
 
-    // SAOSP
-    // QS Tiles
-    public static final int QS_BRIGHTNESS = 239;
-    public static final int QS_SCREEN_OFF = 240;
-    public static final int QS_SCREENSHOT = 241;
-    public static final int QS_VOLUME = 242;
-    public static final int QS_HEADSUP = 243;
-
     // Power menu
-    public static final int POWER_MENU_SETTINGS = 244;
+    public static final int POWER_MENU_SETTINGS = 239;
 
     // Notifcation and battery settings
-    public static final int NOTIFICATION_LIGHT_SETTINGS = 245;
-    public static final int BATTERY_LIGHT_SETTINGS = 246;
+    public static final int NOTIFICATION_LIGHT_SETTINGS = 240;
+    public static final int BATTERY_LIGHT_SETTINGS = 241;
 
     // Notification drawer settings
-    public static final int NOTIFICATION_DRAWER_SETTINGS = 247;
+    public static final int NOTIFICATION_DRAWER_SETTINGS = 242;
 
     // Rotation settings
-    public static final int ROTATION_SETTINGS = 248;
+    public static final int ROTATION_SETTINGS = 243;
 
     // Status bar settings
-    public static final int STATUS_BAR_SETTINGS = 249;
+    public static final int STATUS_BAR_SETTINGS = 244;
 
     // Additional settings
-    public static final int ADDITIONAL_SETTINGS = 249;
+    public static final int ADDITIONAL_SETTINGS = 245;
 
     // Navigation bar settings
-    public static final int NAV_BAR_SETTINGS = 250;
+    public static final int NAV_BAR_SETTINGS = 246;
 
     // Navigation dimension settings
-    public static final int NAV_DIMENSION_SETTINGS = 251;
+    public static final int NAV_DIMENSION_SETTINGS = 247;
 
     // Battery settings
-    public static final int BATTERY_SETTINGS = 252;
+    public static final int BATTERY_SETTINGS = 248;
 
     // Lock screen settings
-    public static final int LOCK_SCREEN_SETTINGS = 253;
+    public static final int LOCK_SCREEN_SETTINGS = 249;
 
     // network traffic settings
-    public static final int NETWORK_TRAFFIC_SETTINGS= 254;
+    public static final int NETWORK_TRAFFIC_SETTINGS= 250;
 
     // These constants must match those in the analytic pipeline, do not edit.
     // Add temporary values to the top of MetricsLogger instead.

@@ -200,13 +200,6 @@ public class QsTuner extends Fragment implements Callback {
         else if (spec.equals("location")) return R.string.quick_settings_location_label;
         else if (spec.equals("cast")) return R.string.quick_settings_cast_title;
         else if (spec.equals("hotspot")) return R.string.quick_settings_hotspot_label;
-        else if (spec.equals("brightness")) return R.string.quick_settings_brightness_label;
-        else if (spec.equals("screenOff")) return R.string.quick_settings_screen_off_label;
-        else if (spec.equals("screenshot")) return R.string.quick_settings_screenshot_label;
-        else if (spec.equals("volume")) return R.string.quick_settings_volume_panel_label;
-        else if (spec.equals("headsup")) return R.string.quick_settings_heads_up_label;
-        else if (spec.equals("timeout")) return R.string.quick_settings_timeout_label;
-        else if (spec.equals("usb_tether")) return R.string.quick_settings_usb_tether_label;
         return 0;
     }
 
@@ -254,9 +247,8 @@ public class QsTuner extends Fragment implements Callback {
         }
 
         public void reset() {
-            Secure.putStringForUser(getContext().getContentResolver(), TILES_SETTING,
-                    "wifi,bt,dnd,cell,airplane,rotation,flashlight,location,cast",
-                    ActivityManager.getCurrentUser());
+            Secure.putStringForUser(getContext().getContentResolver(),
+                    TILES_SETTING, "default", ActivityManager.getCurrentUser());
         }
 
         private void setTiles(List<String> tiles) {
@@ -446,13 +438,6 @@ public class QsTuner extends Fragment implements Callback {
             else if (mSpec.equals("location")) return R.drawable.ic_signal_location_enable;
             else if (mSpec.equals("cast")) return R.drawable.ic_qs_cast_on;
             else if (mSpec.equals("hotspot")) return R.drawable.ic_hotspot_enable;
-            else if (mSpec.equals("brightness")) return R.drawable.ic_qs_brightness_auto_off_alpha;
-            else if (mSpec.equals("screenOff")) return R.drawable.ic_qs_power;
-            else if (mSpec.equals("screenshot")) return R.drawable.ic_qs_screenshot;
-            else if (mSpec.equals("volume")) return R.drawable.ic_qs_volume_panel;
-            else if (mSpec.equals("headsup")) return R.drawable.ic_qs_heads_up_on;
-            else if (mSpec.equals("timeout")) return R.drawable.ic_qs_screen_timeout_vector;
-            else if (mSpec.equals("usb_tether")) return R.drawable.ic_qs_usb_tether_off;
             return R.drawable.android;
         }
 
