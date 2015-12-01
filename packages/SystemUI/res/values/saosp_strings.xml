@@ -16,59 +16,13 @@
  * limitations under the License.
  */
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Quick settings -->
-    <string name="quick_settings_brightness_label">Brightness</string>
-    <string name="quick_settings_heads_up_label">Heads up</string>
-    <string name="quick_settings_screen_off_label">Screen off</string>
-    <string name="quick_settings_screenshot_label">Screenshot</string>
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
-
-    <!-- Content description of the brightness tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_brightness">Brightness.</string>
-
-    <!-- Content description of the screen off tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_screen_off">Screen off.</string>
-
-    <!-- Content description of the screenshot tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_screenshot">Screenshot.</string>
-
-    <!-- Content description of the volume panel tile in quick settings (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_volume_panel">Volume panel.</string>
-
-    <!-- Content description of the heads up tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_heads_up_off">Heads up off.</string>
-    <!-- Content description of the heads up tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_heads_up_on">Heads up on.</string>
-
-    <!-- Announcement made when heads up changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_heads_up_changed_off">Heads up turned off.</string>
-    <!-- Announcement made when heads up changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_heads_up_changed_on">Heads up turned on.</string>
-
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
     <!-- The text for the button in the notification window-shade that clears
          all of the currently visible notifications. [CHAR LIMIT=10]-->
     <string name="clear_recents">Close all recents</string>
 
     <!-- Weather string format in expanded statusbar header -->
     <string name="status_bar_expanded_header_weather_format"><xliff:g id="temp">%1$s</xliff:g> - <xliff:g id="condition">%2$s</xliff:g></string>
-
-    <!-- Screen timeout tile -->
-    <string name="quick_settings_timeout_label">Timeout</string>
-    <string name="quick_settings_screen_timeout_detail_title">Screen timeout</string>
-
-    <!-- Content description of the USB tethering tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_usb_tether_off">USB tethering off.</string>
-    <!-- Content description of the USB tethering tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_usb_tether_on">USB tethering on.</string>
-
-    <!-- Announcement made when USB tethering changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_usb_tether_changed_off">USB tethering turned off.</string>
-    <!-- Announcement made when USB tethering changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_usb_tether_changed_on">USB tethering turned on.</string>
-
-    <!-- USB tethering tile -->
-    <string name="quick_settings_usb_tether_label">USB tethering</string>  
   
     <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
