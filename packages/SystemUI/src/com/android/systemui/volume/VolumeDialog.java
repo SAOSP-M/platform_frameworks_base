@@ -410,17 +410,20 @@ public class VolumeDialog {
                         if (hasVibrator) {
                             mController.setRingerMode(AudioManager.RINGER_MODE_VIBRATE, false);
                         } else {
-                            final boolean wasZero = row.ss.level == 0;
-                            mController.setStreamVolume(stream, wasZero ? row.lastAudibleLevel : 0);
+                            mController.setRingerMode(AudioManager.RINGER_MODE_SILENT, false);
                         }
+                    } else if (mState.ringerModeInternal == AudioManager.RINGER_MODE_VIBRATE) {
+                        mController.setRingerMode(AudioManager.RINGER_MODE_SILENT, false);
                     } else {
                         mController.setRingerMode(AudioManager.RINGER_MODE_NORMAL, false);
                         if (row.ss.level == 0) {
                             mController.setStreamVolume(stream, 1);
+                        } else {
+                            mController.setStreamVolume(stream, row.lastAudibleLevel);
                         }
                     }
                 } else if (row.stream == AudioManager.STREAM_NOTIFICATION) {
-                    // only ringer icon can change to vibrate mode
+                    // only ringer icon can change silent or vibrate mode
                     if (mState.ringerModeInternal == AudioManager.RINGER_MODE_NORMAL) {
                         final boolean vmute = row.ss.level == 0;
                         mController.setStreamVolume(stream, vmute ? row.lastAudibleLevel : 0);
@@ -732,7 +735,7 @@ public class VolumeDialog {
         row.icon.setAlpha(iconEnabled ? 1 : 0.5f);
         final int iconRes =
                 isRingVibrate ? R.drawable.ic_volume_ringer_vibrate
-                : isRingSilent || zenMuted ? row.cachedIconRes
+                : zenMuted ? row.cachedIconRes
                 : ss.routedToBluetooth ?
                         (ss.muted ? R.drawable.ic_volume_media_bt_mute
                                 : R.drawable.ic_volume_media_bt)
@@ -755,9 +758,9 @@ public class VolumeDialog {
         row.icon.setContentDescription(ss.name);
 
         // notification slider is disabled when vibrate or silent - only ringer slider can be used
-        final boolean enableSlider = isNotificationStream ? (!zenMuted && !isRingVibrate && !isNotificationSilent) : !zenMuted;
+        final boolean enableSlider = isNotificationStream ? (!zenMuted && !isRingVibrate && !isRingSilent && !isNotificationSilent) : !zenMuted;
         // update slider value - 0 if silent or vibrate
-        final int vlevel = row.ss.muted && (isNotificationSilent || isRingVibrate && !zenMuted) ? 0
+        final int vlevel = row.ss.muted && (isRingSilent || isNotificationSilent || isRingVibrate && !zenMuted) ? 0
                 : row.ss.level;
         updateVolumeRowSliderH(row, enableSlider, vlevel);
     }
