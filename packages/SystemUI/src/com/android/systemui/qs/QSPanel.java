@@ -94,9 +94,9 @@ public class QSPanel extends ViewGroup {
 
     protected Vibrator mVibrator;
 
-    private SettingsObserver mSettingsObserver;
-
     private boolean mUseMainTiles = false;
+
+    private SettingsObserver mSettingsObserver;
 
     public QSPanel(Context context) {
         this(context, null);
@@ -279,6 +279,8 @@ public class QSPanel extends ViewGroup {
     }
 
     public void refreshAllTiles() {
+        mUseMainTiles = Settings.Secure.getIntForUser(getContext().getContentResolver(),
+                Settings.Secure.QS_USE_MAIN_TILES, 1, UserHandle.USER_CURRENT) == 1;
         for (int i = 0; i < mRecords.size(); i++) {
             TileRecord r = mRecords.get(i);
             r.tileView.setDual(mUseMainTiles && i < 2);
