@@ -293,8 +293,10 @@ public class QSDragPanel extends QSPanel implements View.OnDragListener, View.On
         return mEditing;
     }
 
-    protected int getPagesForCount(int size) {
-        return (int) Math.ceil(size / (double) getTilesPerPage());
+    protected int getPagesForCount(int tileCount) {
+        tileCount -=  getTilesPerPage(true);
+        // first page + rest of tiles
+        return 1 + (int) Math.ceil(tileCount / (double) getTilesPerPage(false));
     }
 
     protected int getCurrentMaxPageCount() {
@@ -469,7 +471,10 @@ public class QSDragPanel extends QSPanel implements View.OnDragListener, View.On
         mViewPager.setPagingEnabled(pagingEnabled);
     }
 
-    public int getTilesPerPage() {
+    public int getTilesPerPage(boolean firstPage) {
+        if (!firstPage) {
+            return QSTileHost.TILES_PER_PAGE + 1;
+        }
         return QSTileHost.TILES_PER_PAGE;
     }
 
