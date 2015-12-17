@@ -62,7 +62,9 @@ public class QSDragPanel extends QSPanel implements View.OnDragListener, View.On
 
     private static final String TAG = "QSDragPanel";
 
-    public static final boolean DEBUG_DRAG = true;
+    public static final boolean DEBUG_DRAG = false;
+
+    private static final int MAX_ROW_COUNT = 3;
 
     protected final ArrayList<QSPage> mPages = new ArrayList<>();
 
@@ -187,14 +189,20 @@ public class QSDragPanel extends QSPanel implements View.OnDragListener, View.On
             @Override
             public void onPageScrolled(int position, float positionOffset,
                                        int positionOffsetPixels) {
-
+                if (DEBUG_DRAG) {
+                    Log.i(TAG, "onPageScrolled() called with " + "position = ["
+                            + position + "], positionOffset = [" + positionOffset
+                            + "], positionOffsetPixels = [" + positionOffsetPixels + "]");
+                }
             }
 
             @Override
             public void onPageSelected(int position) {
                 if (mDragging && position != mDraggingRecord.page
                         && !mViewPager.isFakeDragging() && !mRestoring) {
-                    Log.w(TAG, "moving drag record to page: " + position);
+                    if (DEBUG_DRAG) {
+                        Log.w(TAG, "moving drag record to page: " + position);
+                    }
 
                     // remove it from the previous page and add it here
                     final QSPage sourceP = getPage(mDraggingRecord.page);
@@ -279,6 +287,7 @@ public class QSDragPanel extends QSPanel implements View.OnDragListener, View.On
         mQsPanelTop.onStopDrag();
 
         requestLayout();
+        ensurePagerState();
     }
 
     protected View getDropTarget() {
@@ -609,7 +618,7 @@ public class QSDragPanel extends QSPanel implements View.OnDragListener, View.On
         return cols;
     }
 
-    public int getMaxRows() {
+    public int getCurrentMaxRow() {
         int max = 0;
         for (TileRecord record : mRecords) {
             if (record.row > max) {
@@ -962,9 +971,10 @@ public class QSDragPanel extends QSPanel implements View.OnDragListener, View.On
             }
         }
 
-        int maxRows = getMaxRows();
+        // clamp this value to the max count we want.
+        int maxRows = Math.min(MAX_ROW_COUNT - 1 /* we are 0 based */, getCurrentMaxRow());
 
-        if (tile.row >= maxRows) {
+        if (tile.row > maxRows) {
             tile.destinationPage = tile.destinationPage + 1;
             tile.row = 0;
             tile.col = 0;
