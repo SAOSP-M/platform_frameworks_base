@@ -3564,30 +3564,6 @@ public final class Settings {
         public static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
 
         /**
-         * Shows custom date before clock time
-         * 0 - No Date
-         * 1 - Small Date
-         * 2 - Normal Date
-         * @hide
-         */
-        public static final String STATUS_BAR_DATE = "status_bar_date";
-
-        /**
-         * Sets the date string style
-         * 0 - Regular style
-         * 1 - Lowercase
-         * 2 - Uppercase
-         * @hide
-         */
-        public static final String STATUS_BAR_DATE_STYLE = "status_bar_date_style";
-
-        /**
-         * Stores the java DateFormat string for the date
-         * @hide
-         */
-        public static final String STATUS_BAR_DATE_FORMAT = "status_bar_date_format";
-
-        /**
          * Forces formal text input.  1 to replace emoticon key with enter key.
          * @hide
          */
@@ -3672,28 +3648,6 @@ public final class Settings {
          * @hide
          */
         public static final String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
-
-        /**
-         * Whether to hide the clock, show it in the right or left
-         * position or show it in the center
-         * 0: don't show the clock
-         * 1: show the clock in the right position (LTR)
-         * 2: show the clock in the center
-         * 3: show the clock in the left position (LTR)
-         * default: 1
-         * @hide
-         */
-        public static final String STATUS_BAR_CLOCK = "status_bar_clock";
-
-        /**
-         * Display style of AM/PM next to clock in status bar
-         * 0: Normal display (Eclair stock)
-         * 1: Small display (Froyo stock)
-         * 2: No display (Gingerbread/ICS stock)
-         * default: 2
-         * @hide
-         */
-        public static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
 
        /**
         * boolean value. toggles using arrow key locations on nav bar
