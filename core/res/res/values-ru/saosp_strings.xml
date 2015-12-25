@@ -46,4 +46,22 @@
     
     <!-- WiFi turn off notification action text -->
     <string name="notify_turn_wifi_off_title">Выключить Wi-Fi</string>
+    
+    <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+    <string name="system_error_vendorprint">Похоже ваш образ прошивки вероятно устарел. Пожалуйста, установите последний образ прошивки для вашего устройства..</string>
+
+    <!-- Title of a category of application permissions, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permgrouplab_security">Безопасность</string>
+    <!-- Description of a category of application permissions, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permgroupdesc_security">Разрешения, связанные с информацией о безопасности устройства.</string>
+
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_readPhoneBlacklist">читать черный список телефона</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_readPhoneBlacklist">Приложение сможет считывать информацию о телефонных номерах, заблокированных для входящих вызовов или сообщений.</string>
+
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_changePhoneBlacklist">изменять черный список телефона</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_changePhoneBlacklist">Приложение сможет изменять телефонные номера, которые будут заблокированы для входящих вызовов или сообщений.</string>
 </resources>
