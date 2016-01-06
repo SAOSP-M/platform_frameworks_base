@@ -301,7 +301,7 @@ public class QSTileHost implements QSTile.Host {
                 return new HeadsUpTile(this);
             case QSConstants.TILE_SCREEN_TIMEOUT:
                 return new ScreenTimeoutTile(this);            
-            case QSConstants.TILE_USB_TETHER;
+            case QSConstants.TILE_USB_TETHER:
                 return new UsbTetherTile(this);
             default:
                 throw new IllegalArgumentException("Bad tile spec: " + tileSpec);
