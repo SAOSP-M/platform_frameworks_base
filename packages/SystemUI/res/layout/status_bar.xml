@@ -87,6 +87,13 @@
                     android:visibility="gone"
                     />
 
+                <com.android.systemui.statusbar.StatusBarIconView android:id="@+id/moreIcon"
+                    android:layout_width="@dimen/status_bar_icon_size"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/stat_notify_more"
+                    android:visibility="gone"
+                    />
+
                 <com.android.systemui.statusbar.phone.IconMerger android:id="@+id/notificationIcons"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -95,12 +102,6 @@
                     android:orientation="horizontal"
                     />
 
-                <com.android.systemui.statusbar.StatusBarIconView android:id="@+id/moreIcon"
-                    android:layout_width="@dimen/status_bar_icon_size"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/stat_notify_more"
-                    android:visibility="gone"
-                    />
             </com.android.keyguard.AlphaOptimizedLinearLayout>
         </com.android.systemui.statusbar.AlphaOptimizedFrameLayout>
 
