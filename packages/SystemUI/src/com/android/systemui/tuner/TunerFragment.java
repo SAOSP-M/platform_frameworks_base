@@ -19,18 +19,12 @@ import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import android.database.ContentObserver;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.provider.Settings.System;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -42,9 +36,13 @@ import com.android.systemui.tuner.TunerService.Tunable;
 
 public class TunerFragment extends PreferenceFragment {
 
-    public static final String TAG = "TunerFragment";
+    private static final String TAG = "TunerFragment";
 
-    private final SettingObserver mSettingObserver = new SettingObserver();
+    private static final String KEY_QS_TUNER = "qs_tuner";
+
+    public static final String SETTING_SEEN_TUNER_WARNING = "seen_tuner_warning";
+
+    private static final int MENU_REMOVE = Menu.FIRST + 1;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +50,30 @@ public class TunerFragment extends PreferenceFragment {
         addPreferencesFromResource(R.xml.tuner_prefs);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         setHasOptionsMenu(true);
+
+        findPreference(KEY_QS_TUNER).setOnPreferenceClickListener(new OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(android.R.id.content, new QsTuner(), "QsTuner");
+                ft.addToBackStack(null);
+                ft.commit();
+                return true;
+            }
+        });
+        if (Settings.Secure.getInt(getContext().getContentResolver(), SETTING_SEEN_TUNER_WARNING,
+                0) == 0) {
+            new AlertDialog.Builder(getContext())
+                    .setTitle(R.string.tuner_warning_title)
+                    .setMessage(R.string.tuner_warning)
+                    .setPositiveButton(R.string.got_it, new OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Settings.Secure.putInt(getContext().getContentResolver(),
+                                    SETTING_SEEN_TUNER_WARNING, 1);
+                        }
+                    }).show();
+        }
     }
 
     @Override
@@ -65,7 +87,6 @@ public class TunerFragment extends PreferenceFragment {
     @Override
     public void onPause() {
         super.onPause();
-        getContext().getContentResolver().unregisterContentObserver(mSettingObserver);
 
         unregisterPrefs(getPreferenceScreen());
         MetricsLogger.visibility(getContext(), MetricsLogger.TUNER, false);
@@ -98,23 +119,25 @@ public class TunerFragment extends PreferenceFragment {
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.add(Menu.NONE, MENU_REMOVE, Menu.NONE, R.string.remove_from_settings);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 getActivity().finish();
                 return true;
+            case MENU_REMOVE:
+                TunerService.showResetRequest(getContext(), new Runnable() {
+                    @Override
+                    public void run() {
+                        getActivity().finish();
+                    }
+                });
+                return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private final class SettingObserver extends ContentObserver {
-        public SettingObserver() {
-            super(new Handler());
-        }
-
-        @Override
-        public void onChange(boolean selfChange, Uri uri, int userId) {
-            super.onChange(selfChange, uri, userId);
-        }
     }
 }

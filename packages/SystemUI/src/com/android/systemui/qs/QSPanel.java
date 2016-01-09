@@ -57,12 +57,12 @@ public class QSPanel extends ViewGroup {
     private static final float TILE_ASPECT_SMALL = 0.8f;
 
     private final Context mContext;
-    private final ArrayList<TileRecord> mRecords = new ArrayList<TileRecord>();
+    protected final ArrayList<TileRecord> mRecords = new ArrayList<TileRecord>();
     private final View mDetail;
     private final ViewGroup mDetailContent;
     private final TextView mDetailSettingsButton;
     private final TextView mDetailDoneButton;
-    private final View mBrightnessView;
+    protected final View mBrightnessView;
     private final QSDetailClipper mClipper;
     private final H mHandler = new H();
 
@@ -94,9 +94,9 @@ public class QSPanel extends ViewGroup {
 
     protected Vibrator mVibrator;
 
-    private boolean mUseMainTiles = false;
-
     private SettingsObserver mSettingsObserver;
+
+    private boolean mUseMainTiles = false;
 
     public QSPanel(Context context) {
         this(context, null);
@@ -279,8 +279,6 @@ public class QSPanel extends ViewGroup {
     }
 
     public void refreshAllTiles() {
-        mUseMainTiles = Settings.Secure.getIntForUser(getContext().getContentResolver(),
-                Settings.Secure.QS_USE_MAIN_TILES, 1, UserHandle.USER_CURRENT) == 1;
         for (int i = 0; i < mRecords.size(); i++) {
             TileRecord r = mRecords.get(i);
             r.tileView.setDual(mUseMainTiles && i < 2);
@@ -668,13 +666,13 @@ public class QSPanel extends ViewGroup {
         int y;
     }
 
-    private static final class TileRecord extends Record {
-        QSTile<?> tile;
-        QSTileView tileView;
-        int row;
-        int col;
-        boolean scanState;
-        boolean openingDetail;
+    protected static final class TileRecord extends Record {
+        public QSTile<?> tile;
+        public QSTileView tileView;
+        public int row;
+        public int col;
+        public boolean scanState;
+        public boolean openingDetail;
     }
 
     private final AnimatorListenerAdapter mTeardownDetailWhenDone = new AnimatorListenerAdapter() {

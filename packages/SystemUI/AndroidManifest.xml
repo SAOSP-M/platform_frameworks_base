@@ -193,11 +193,18 @@
         </activity>
 
         <activity android:name=".tuner.TunerActivity"
-                  android:enabled="true"
+                  android:enabled="false"
+                  android:icon="@drawable/tuner"
                   android:theme="@android:style/Theme.Material.Settings"
-                  android:label="@string/systemui_tuner_statusbar_title"
+                  android:label="@string/system_ui_tuner"
                   android:process=":tuner"
                   android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                    android:value="com.android.settings.category.system" />
         </activity>
 
         <!-- Alternate Recents -->

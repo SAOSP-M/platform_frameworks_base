@@ -3496,6 +3496,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         mNetworkController.removeSignalCallback(signalCluster);
         mNetworkController.removeSignalCallback(signalClusterKeyguard);
         mNetworkController.removeSignalCallback(signalClusterQs);
+        if (mQSPanel != null && mQSPanel.getHost() != null) {
+            mQSPanel.getHost().destroy();
+        }
     }
 
     private boolean mDemoModeAllowed;
