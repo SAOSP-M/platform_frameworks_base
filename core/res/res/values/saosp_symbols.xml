@@ -65,4 +65,9 @@
   <java-symbol type="drawable" name="ic_audio_notification_new" />
   <java-symbol type="drawable" name="ic_audio_notification_mute_new" />
   <java-symbol type="drawable" name="ic_audio_notification_mute_alpha" />
+
+  <!-- Show battery fully charged notification -->
+  <java-symbol type="bool" name="config_showBatteryFullyChargedNotification" />
+  <java-symbol type="string" name="notify_battery_fully_charged_title" />
+  <java-symbol type="string" name="notify_battery_fully_charged_text" />
 </resources>
