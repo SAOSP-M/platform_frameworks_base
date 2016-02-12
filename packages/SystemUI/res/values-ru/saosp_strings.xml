@@ -141,4 +141,8 @@
     <!-- SystemUI Tuner Parts -->
     <string name="systemui_tuner_statusbar_title">Значки строки состояния</string>
     <string name="systemui_tuner_qs_title">Быстрые настройки</string>
+    
+    <!-- Notification which notifies user flashlight is enabled -->
+    <string name="quick_settings_tile_flashlight_not_title">Фонарик включён</string>
+    <string name="quick_settings_tile_flashlight_not_summary">Нажмите для отключения</string>
 </resources>

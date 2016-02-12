@@ -64,4 +64,8 @@
     <string name="permlab_changePhoneBlacklist">изменять черный список телефона</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_changePhoneBlacklist">Приложение сможет изменять телефонные номера, которые будут заблокированы для входящих вызовов или сообщений.</string>
+
+    <!-- Battery fully charged notification -->
+    <string name="notify_battery_fully_charged_title">Аккумулятор полностью заряжен</string>
+    <string name="notify_battery_fully_charged_text">Отключите устройство от сети для продления срока службы батареи.</string>
 </resources>
