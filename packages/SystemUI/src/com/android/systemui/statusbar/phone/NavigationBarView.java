@@ -224,9 +224,9 @@ public class NavigationBarView extends BaseNavigationBar {
     }
 
     @Override
-    public void onUpdateResources(Resources res) {
-        getIcons(getAvailableResources());
-        mBarTransitions.updateResources(getAvailableResources());
+    public void updateNavbarThemedResources(Resources res) {
+        getIcons(getResources());
+        mBarTransitions.updateResources(getResources());
         for (int i = 0; i < mRotatedViews.length; i++) {
             ViewGroup container = (ViewGroup) mRotatedViews[i];
             if (container != null) {
@@ -247,7 +247,7 @@ public class NavigationBarView extends BaseNavigationBar {
                     // ImageView keeps track of the resource ID and if it is the same
                     // it will not update the drawable.
                     iv.setImageDrawable(null);
-                    iv.setImageDrawable(getAvailableResources().getDrawable(
+                    iv.setImageDrawable(getResources().getDrawable(
                             R.drawable.ic_sysbar_lights_out_dot_large));
                 }
             }
@@ -256,7 +256,7 @@ public class NavigationBarView extends BaseNavigationBar {
 
     @Override
     public void setLayoutDirection(int layoutDirection) {
-        getIcons(getAvailableResources());
+        getIcons(getResources());
 
         super.setLayoutDirection(layoutDirection);
     }
