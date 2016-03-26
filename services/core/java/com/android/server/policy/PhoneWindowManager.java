@@ -7315,6 +7315,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     }
 
     @Override
+    public boolean navigationBarCanMove() {
+        return mNavigationBarCanMove;
+    }
+    
+    @Override
     public void setLastInputMethodWindowLw(WindowState ime, WindowState target) {
         mLastInputMethodWindow = ime;
         mLastInputMethodTargetWindow = target;
