@@ -20,4 +20,19 @@
     <!-- Floating action button -->
     <color name="fab_color">@*android:color/material_deep_teal_500</color>
     <color name="floating_action_button_icon_color">#ffffff</color>
+
+    <!-- Colors for the system bars -->
+    <color name="status_bar_background_opaque">@color/system_bar_background_opaque</color>
+    <color name="status_bar_background_semi_transparent">
+        @color/system_bar_background_semi_transparent
+    </color>
+    <color name="status_bar_background_transparent">@color/system_bar_background_transparent</color>
+    <color name="navigation_bar_background_opaque">@color/system_bar_background_opaque</color>
+    <color name="navigation_bar_background_semi_transparent">
+        @color/system_bar_background_semi_transparent
+    </color>
+    <color name="navigation_bar_background_transparent">
+        @color/system_bar_background_transparent
+    </color>
+
 </resources>
