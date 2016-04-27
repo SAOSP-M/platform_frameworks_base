@@ -6404,6 +6404,36 @@ public final class Settings {
         public static final String QS_LOCATION_ADVANCED = "qs_location_advanced";
 
         /**
+         * Custom Pulse Widths
+         * @hide
+         */
+        public static final String PULSE_CUSTOM_DIMEN = "pulse_custom_dimen";
+
+        /**
+         * Custom Spacing Between Pulse Bars
+         * @hide
+         */
+        public static final String PULSE_CUSTOM_DIV = "pulse_custom_div";
+
+        /**
+         * Custom Pulse Block Size
+         * @hide
+         */
+        public static final String PULSE_FILLED_BLOCK_SIZE = "pulse_filled_block_size";
+
+        /**
+         * Custom Spacing Between Pulse Blocks
+         * @hide
+         */
+        public static final String PULSE_EMPTY_BLOCK_SIZE = "pulse_empty_block_size";
+
+        /**
+         * Custom Pulse Sanity Levels
+         * @hide
+         */
+        public static final String PULSE_CUSTOM_FUDGE_FACTOR = "pulse_custom_fudge_factor";
+
+        /**
          * @hide
          */
         public static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
