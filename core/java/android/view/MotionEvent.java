@@ -417,6 +417,21 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public static final int FLAG_WINDOW_IS_OBSCURED = 0x1;
 
     /**
+     * This flag indicates that the window that received this motion event is partly
+     * or wholly obscured by another visible window above it.  This flag is set to true
+     * even if the event did not directly pass through the obscured area.
+     * A security sensitive application can check this flag to identify situations in which
+     * a malicious application may have covered up part of its content for the purpose
+     * of misleading the user or hijacking touches.  An appropriate response might be
+     * to drop the suspect touches or to take additional precautions to confirm the user's
+     * actual intent.
+     *
+     * Unlike FLAG_WINDOW_IS_OBSCURED, this is actually true.
+     * @hide
+     */
+    public static final int FLAG_WINDOW_IS_PARTIALLY_OBSCURED = 0x2;
+
+    /**
      * Private flag that indicates when the system has detected that this motion event
      * may be inconsistent with respect to the sequence of previously delivered motion events,
      * such as when a pointer move event is sent but the pointer is not down.
@@ -962,6 +977,22 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public static final int AXIS_TILT = 25;
 
     /**
+     * Axis constant: Generic scroll axis of a motion event.
+     * <p>
+     * <ul>
+     * <li>Reports the relative movement of the generic scrolling device.
+     * </ul>
+     * </p><p>
+     * This axis should be used for scroll events that are neither strictly vertical nor horizontal.
+     * A good example would be the rotation of a rotary encoder input device.
+     * </p>
+     *
+     * @see #getAxisValue(int, int)
+     * {@hide}
+     */
+    public static final int AXIS_SCROLL = 26;
+
+    /**
      * Axis constant: Generic 1 axis of a motion event.
      * The interpretation of a generic axis is device-specific.
      *
@@ -1171,6 +1202,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
         names.append(AXIS_BRAKE, "AXIS_BRAKE");
         names.append(AXIS_DISTANCE, "AXIS_DISTANCE");
         names.append(AXIS_TILT, "AXIS_TILT");
+        names.append(AXIS_SCROLL, "AXIS_SCROLL");
         names.append(AXIS_GENERIC_1, "AXIS_GENERIC_1");
         names.append(AXIS_GENERIC_2, "AXIS_GENERIC_2");
         names.append(AXIS_GENERIC_3, "AXIS_GENERIC_3");
