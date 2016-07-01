@@ -12937,6 +12937,11 @@ package android.graphics.drawable {
     method public void addState(int[], android.graphics.drawable.Drawable);
   }
 
+  public class StopMotionVectorDrawable extends android.graphics.drawable.DrawableWrapper {
+    ctor public StopMotionVectorDrawable(android.graphics.drawable.Drawable);
+    method public void setCurrentFraction(float);
+  }
+
   public class TransitionDrawable extends android.graphics.drawable.LayerDrawable implements android.graphics.drawable.Drawable.Callback {
     ctor public TransitionDrawable(android.graphics.drawable.Drawable[]);
     method public boolean isCrossFadeEnabled();
