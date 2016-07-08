@@ -22,6 +22,8 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.telephony.SubscriptionInfo;
 import android.util.ArraySet;
 import android.util.AttributeSet;
@@ -198,8 +200,8 @@ public class SignalClusterView
         post(new Runnable() {
             @Override
             public void run() {
-                mVpnVisible = mSC.isVpnEnabled();
                 apply();
+                mVpnVisible = mSC.isVpnEnabled();
             }
         });
     }
@@ -371,8 +373,15 @@ public class SignalClusterView
     // Run after each indicator change.
     private void apply() {
         if (mWifiGroup == null) return;
+        
+            mVpnVisible=Settings.System.getIntForUser(mContext.getContentResolver(),
+            Settings.System.STATUS_BAR_VPN, 1, UserHandle.USER_CURRENT) == 1;
+        if (mVpnVisible) {           
+             mVpn.setVisibility(View.VISIBLE);
+        } else {
+             mVpn.setVisibility(View.GONE);
+        }
 
-        mVpn.setVisibility(mVpnVisible ? View.VISIBLE : View.GONE);
         if (DEBUG) Log.d(TAG, String.format("vpn: %s", mVpnVisible ? "VISIBLE" : "GONE"));
 
         if (mEthernetVisible) {
