@@ -2209,12 +2209,6 @@ public final class Settings {
         public static final int ADVANCED_SETTINGS_DEFAULT = 0;
 
         /**
-         * Navigation controls to Use
-         * @hide
-         */
-        public static final String NAV_BUTTONS = "nav_buttons";
-
-        /**
          * @deprecated Use {@link android.provider.Settings.Global#AIRPLANE_MODE_ON} instead
          */
         @Deprecated
@@ -3519,15 +3513,6 @@ public final class Settings {
         public static final Validator DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR = sBooleanValidator;
 
         /**
-         *  Enable navigation bar double tap gesture on to put device to sleep
-         * @hide
-         */
-        public static final String DOUBLE_TAP_SLEEP_NAVBAR = "double_tap_sleep_navbar";
-
-        /** @hide */
-        public static final Validator DOUBLE_TAP_SLEEP_NAVBAR_VALIDATOR = sBooleanValidator;
-
-        /**
          * Status bar carrier label
          * 0: Hide
          * 1: Display on keyguard status bar
@@ -3540,45 +3525,6 @@ public final class Settings {
         /** @hide */
         private static final Validator STATUS_BAR_SHOW_CARRIER_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 3);
-
-        /**
-         * Navigation bar height when it is on protrait
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
-
-        /** @hide */
-        private static final Validator NAVIGATION_BAR_HEIGHT_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 48);
-
-        /**
-         * Navigation bar height when it is on landscape
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
-
-        /** @hide */
-        private static final Validator NAVIGATION_BAR_HEIGHT_LANDSCAPE_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 48);
-
-        /**
-         * Navigation bar height when it is on landscape at the right
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
-
-        /** @hide */
-        private static final Validator NAVIGATION_BAR_WIDTH_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 42);
-
-        /**
-         * Wether navigation bar is enabled or not
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_SHOW = "navigation_bar_show";
-
-        /** @hide */
-        public static final Validator NAVIGATION_BAR_SHOW_VALIDATOR = sBooleanValidator;
 
         /**
          * Display style of the status bar battery information
@@ -3604,14 +3550,14 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-	
+
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
          * the setting value. See an example above.
          */
-
+	
         /**
          * Volume rocker wake
          * @hide
@@ -3654,6 +3600,7 @@ public final class Settings {
         /**
          * Volume music controls
          * @hide
+
          */
         public static final String VOLUME_MUSIC_CONTROLS = "volume_music_controls";
 
@@ -3763,13 +3710,6 @@ public final class Settings {
          * @hide
          */
         public static final String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
-
-       /**
-        * boolean value. toggles using arrow key locations on nav bar
-        * as left and right dpad keys
-        * @hide
-        */
-        public static final String NAVIGATION_BAR_MENU_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
 
         /**
          * Toast icon
@@ -3975,10 +3915,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(QS_QUICK_PULLDOWN);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
             PRIVATE_SETTINGS.add(STATUS_BAR_SHOW_CARRIER);
-            PRIVATE_SETTINGS.add(NAVIGATION_BAR_HEIGHT);
-            PRIVATE_SETTINGS.add(NAVIGATION_BAR_HEIGHT_LANDSCAPE);
-            PRIVATE_SETTINGS.add(NAVIGATION_BAR_WIDTH);
-            PRIVATE_SETTINGS.add(NAVIGATION_BAR_SHOW);
             PRIVATE_SETTINGS.add(STATUS_BAR_BATTERY_STYLE);
         }
 

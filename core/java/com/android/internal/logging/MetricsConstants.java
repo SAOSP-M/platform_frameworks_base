@@ -289,13 +289,10 @@ public interface MetricsConstants {
     public static final int STATUS_BAR_SETTINGS = 249;
 
     // Additional settings
-    public static final int ADDITIONAL_SETTINGS = 249;
+    public static final int ADDITIONAL_SETTINGS = 250;
 
     // Navigation bar settings
-    public static final int NAV_BAR_SETTINGS = 250;
-
-    // Navigation dimension settings
-    public static final int NAV_DIMENSION_SETTINGS = 251;
+    public static final int NAV_BAR_SETTINGS = 251;
 
     // Battery settings
     public static final int BATTERY_SETTINGS = 252;
