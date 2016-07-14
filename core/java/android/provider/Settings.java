@@ -6434,6 +6434,18 @@ public final class Settings {
         public static final String PULSE_CUSTOM_FUDGE_FACTOR = "pulse_custom_fudge_factor";
 
         /**
+         * Pulse Fudge Factor
+         * @hide
+         */
+        public static final String PULSE_SOLID_FUDGE_FACTOR = "pulse_solid_fudge_factor";
+
+        /**
+         * Pulse Lavamp Animation Speed
+         * @hide
+         */
+        public static final String PULSE_LAVALAMP_SOLID_SPEED = "lava_lamp_solid_speed";
+
+        /**
          * @hide
          */
         public static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
