@@ -3609,12 +3609,6 @@ public final class Settings {
 
          */
         public static final String VOLUME_MUSIC_CONTROLS = "volume_music_controls";
-
-        /**
- 	 * Whether to show the IME switcher
-         * @hide
-         */
-        public static final String STATUS_BAR_IME_SWITCHER = "status_bar_ime_switcher";
       
         /**
          * Show or hide clock
@@ -6366,21 +6360,8 @@ public final class Settings {
          * String to contain power menu actions
          * @hide
          */
-        public static final String POWER_MENU_ACTIONS = "power_menu_actions";
-
-        /**
-         * Whether to allow killing of the foreground app by long-pressing the Back button
-         * @hide
-         */
-        public static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-
-        /**
-         * The delay when killing the app on long press takes place
-         *
-         * @hide
-         */
-        public static final String LONG_PRESS_KILL_DELAY = "long_press_kill_delay";
-
+        public static final String POWER_MENU_ACTIONS = "power_menu_actions";        
+       
         /**
          * Whether the camera launch gesture should be disabled.
          *

@@ -46,12 +46,6 @@
 
   <java-symbol type="string" name="app_killed_message" />
 
-  <!-- Config.xml entries -->
-  <java-symbol type="integer" name="config_backKillTimeout" />
-
-  <!-- ime switcher -->
-  <java-symbol type="bool" name="config_show_cmIMESwitcher"/>
-
   <!-- Doze invert -->
   <java-symbol type="bool" name="config_invert_colors_on_doze" />
 
