@@ -80,26 +80,6 @@
     <string name="lockscreen_choose_action_title">Выбор действия</string>
     <string name="lockscreen_none_target">Нет</string>
 
-     <!-- Dialog title for navigation bar button selection -->
-    <string name="navbar_dialog_title">Выберите действие</string>
-    <string name="navbar_home_button">Домой</string>
-    <string name="navbar_recent_button">Запущ. приложения</string>
-    <string name="navbar_search_button">Поиск</string>
-    <string name="navbar_back_button">Назад</string>
-    <string name="navbar_empty_button">Пустая кнопка</string>
-    <string name="navbar_menu_conditional_button">Меню (если доступно)</string>
-    <string name="navbar_menu_always_button">Меню (всегда)</string>
-    <string name="navbar_menu_big_button">Меню</string>
-
-    <string name="accessibility_dpad_left">Курсор влево</string>
-    <string name="accessibility_dpad_right">Курсор вправо</string>
-    
-    <!-- Navigation bar power button-->
-    <string name="navbar_power_button">Меню питания</string>
-
-    <!-- Content description of the power button for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_power">Питание</string>
-    
     <!-- QS location sensors -->
     <!-- Content description of the location tile in quick settings when on, battery saving mode (not shown on the screen). [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_location_battery_saving">Местоположение: по координатам сети.</string>
@@ -139,4 +119,5 @@
     <!-- Notification which notifies user flashlight is enabled -->
     <string name="quick_settings_tile_flashlight_not_title">Фонарик включён</string>
     <string name="quick_settings_tile_flashlight_not_summary">Нажмите для отключения</string>
+    
 </resources>
